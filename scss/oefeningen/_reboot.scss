@@ -1,0 +1,17 @@
+* {margin:0;padding:0;}
+
+body {font-family:$font;}
+
+p {
+  margin: $basismarge;}
+
+ul {
+  padding: $basismarge*3;}
+
+a{
+  color: #000;
+  background-color: inherit;
+  &:hover {
+    color: $oranje;
+    background-color: inherit;}
+}

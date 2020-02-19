@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h2.css">
+    <title>Hoofdstuk 2</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 2: media queries</h1>
+    <p>Je leerde in het eerste semester al media queries schrijven bij het linken van een CSS-bestand. Bij het begin van
+        het tweede semester leerde je de mediaqueries in het CSS-bestand op te nemen, volgens het 'mobile
+        first'-principe (en dus van klein naar groot ontwerp met min-width).</p>
+    <p>Wat we nu nog aan die kennis willen toevoegen, is dat je ook nog andere feature-testen kunt schrijven, zoals je
+        kunt nakijken op
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features">toelichting media features</a>.
+    </p>
+
+    <p><img src="images/dppx.jpg" alt="uitleg dots per pixel dppx" height="300" width="750"></p>
+    <p>Wil je andere <span>achtergrondafbeeldingen</span> leveren wanneer de device pixel ratio (DPR) niet 1 maar hoger is, dan kun je daar ook
+        media queries voor schrijven. De code die hiervoor nodig is, werd bijgestuurd door het W3C en in deze nieuwe vorm geïntegreerd in de recente browsers.</p>
+    <p> Een voorbeeld met een <span>achtergrondafbeelding</span> in lage resolutie die vervangen wordt door een achtergrondafbeelding met een hoge
+        resolutie op een scherm met pixeldichtheid minimaal 2:</p>
+    <p><img src="images/dppxcode.png" alt="code test op dppx" height="264" width="623"></p>
+
+    <p><span>Opgelet:</span> je hoeft geen mediaqueries in CSS te schrijven om een andere afbeelding te tonen in een
+        <span>&lt;img&gt;</span>-tag wanneer de device pixel ratio (DPR) niet 1 maar hoger is. Dat kwam eerder al aan bod in 'deel 6: responsieve afbeeldingen'.</p>
+</article>
+<p><a href="hoofdstuk1.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i class="material-icons">home</i></a> <a href="hoofdstuk3.html"><i class="material-icons">keyboard_arrow_right</i></a></p>
+
+</body>
+</html>

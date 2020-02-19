@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h10.css">
+    <title>Hoofdstuk 10</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 10: color &amp; opacity</h1>
+    <p>Op vlak van kleuren en dekking van kleuren is er weinig nieuws te melden.
+        De eigenschap <span>opacity</span> is ingevoerd om elementen doorzichtig te kunnen maken zodat een deel van de
+        achtergrond achter het element terug zichtbaar wordt.
+    </p>
+    <p>Naast rgb-noteringen voor kleuren, kun je nu ook werken met <span>rgba</span> waarbij de vierde parameter voor de
+        alfa-waarde of mate van transparantie staat.
+        rgba(255,0,0,1) staat voor knalrood. rgba(255,0,0,0) staat voor volledig transparant.
+    </p>
+    <p>Het is ook mogelijk geworden met <span>hsl</span> of <span>hsla</span>-notatie te werken waarbij <span>h</span>
+        staat voor hue, <span>s</span> voor saturation, <span>l</span> voor lightness en <span>a</span> opnieuw voor
+        alpha. Hue krijgt een waarde van 0 tot 360, saturation een percentage van 0% tot 100%, lightness een percentage
+        van 0%
+        tot 100% en alpha een getal van 0 tot 1.
+    </p>
+    <p>Een voorbeeld van een hsl-color picker: <a href="http://www.workwithcolor.com/hsl-color-picker-01.htm">workwithcolor.com</a>
+    </p>
+    <h2>currentColor</h2>
+    <p>De komst van de <span>currentColor variabele in CSS</span> is wel revolutionair. Tot nu toe
+        moest je eenzelfde kleurcode voor een bepaalde selector vaak hernemen. Wanneer je bijvoorbeeld de rand en de
+        slagschaduw dezelfde kleur wil geven als de titel waarrond de kader en de schaduw komen,
+        dan heb je 3x dezelfde kleurcode nodig en moest je die tot nu toe ook 3x in je code typen. Dat gaat nu anders!
+    </p>
+    <p>Bij een wijziging van de kleur van de titel van niveau 2 hierboven moet de code voor de rand en de slagschaduw
+        niet meer herschreven worden!</p>
+    <p>De code die gebruikt werd:</p>
+    <pre>h2 {
+  padding: 2rem;
+  color: rebeccapurple;
+  background-color: inherit;
+  border: 5px solid currentColor;
+  box-shadow: 0 0 5px currentColor;
+}</pre>
+</article>
+<p><a href="hoofdstuk9.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i class="material-icons">home</i></a> <a href="hoofdstuk11.html"><i class="material-icons">keyboard_arrow_right</i></a></p>
+
+</body>
+</html>

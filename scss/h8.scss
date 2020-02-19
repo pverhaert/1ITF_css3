@@ -1,0 +1,28 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+article div {
+  width: 315px;
+  padding-top: 105px;
+  border: 1px solid #000;
+  background-image: url(../images/hart.png);
+}
+
+#nr1 {
+  background-repeat: repeat;
+}
+
+#nr2 {
+  background-repeat: space;
+}
+
+#nr3 {
+  background-repeat: round;
+}
+
+#nr4 {
+  background-image: url(../images/man.png), url(../images/man.png), url(../images/landschap.png);
+  background-repeat: no-repeat;
+  background-position: 20% 70%, 40% 60%, 0% 0%;
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h6.css">
+    <title>Hoofdstuk 6</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 6: text effects</h1>
+    <p>Bij heel wat eigenschappen in CSS3 zijn coördinaten nodig om aan te geven waar je een effect/element wil
+        plaatsen. De linkerbovenhoek (top left) is de oorsprong van waaruit gerekend wordt. Een verschuiving met 2
+        positieve getallen betekent dat je naar rechtsonder gaat. Een verschuiving met 2 negatieve getallen betekent
+        naar linksboven verschuiven.</p>
+    <p><img src="images/coordinaten1.png" height="309" width="374" alt="coördinaten: oorsprong"></p>
+    <p><img src="images/coordinaten2.png" height="309" width="374" alt="coördinaten: verschuiving"></p>
+
+    <h2>Text-shadow</h2>
+    <p>Met de eigenschap text-shadow kun je vlot experimenteren op <a
+        href="http://css3generator.com/">css3generator.com</a> of
+        <a href="http://css3gen.com/text-shadow/">css3gen.com</a>.
+        Deze nieuwe eigenschap wordt al ruim ondersteund en er zijn dus geen prefixen meer nodig.
+    </p>
+    <p>Wat niet in deze generatoren voorzien is (terwijl
+        het wel kan), is het aanbrengen van meerdere tekstschaduwen op 1 element</p>
+    <p><span>CSS3</span></p>
+
+    <p>De gebruikte code in dit voorbeeld:</p>
+    <pre>span {
+    font-size: 5em;
+    font-family: $lettertypealternatief;
+    text-shadow:
+            0 -2px 1px $oranje,
+            0 -4px 3px lighten(invert($oranje),20%),
+            0 -6px 6px lighten($donker,30%),
+            0 -9px 12px $donker;
+  }
+</pre>
+
+</article>
+
+<p><a href="hoofdstuk5.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk7.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h1.css">
+    <title>Hoofdstuk 1</title>
+</head>
+<body>
+<article class="container">
+    <h1>Hoofdstuk 1: prefixen</h1>
+    <p>CSS3 is nog steeds in ontwikkeling. Experimentele eigenschappen kunnen nog niet door elke browser correct
+        geïnterpreteerd worden. Voor een eigenschap definitief door een browser ondersteund wordt, is er een periode
+        waarin de browserfabrikant enkel een nieuwe experimentele eigenschap afhandelt wanneer die een eigen prefix
+        gekregen heeft.
+        De andere lijnen code worden genegeerd.</p>
+    <p>De prefixen die je kan gebruiken voor nieuwe eigenschappen:</p>
+    <ul>
+        <li>WebKit (Chrome, Safari, recente versies van Opera)
+            <ul>
+                <li>-webkit-</li>
+            </ul>
+        </li>
+        <li>Mozilla
+            <ul>
+                <li>-moz-</li>
+            </ul>
+        </li>
+        <li>Opera - oudere versies
+            <ul>
+                <li>-o-</li>
+            </ul>
+        </li>
+        <li>Internet Explorer, Edge
+            <ul>
+                <li>-ms-</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Het is belangrijk EERST de geprefixte lijnen op te nemen in je code en pas daarna de niet-geprefixte lijn. Op <a
+        href="https://caniuse.com/">caniuse.com</a> vind je terug of je nog prefixen moet gebruiken.</p>
+
+    <h2>Voorbeeld</h2>
+    <p>Kijk eens na op <a href="https://caniuse.com/#search=text-emphasis">caniuse.com</a> in hoeverre de eigenschap
+        <span>text-emphasis</span> (al heel lang een aanbeveling, zie
+        <a href="https://www.w3.org/TR/css-text-decor-3/#text-emphasis-property">text-emphasis 1 augustus 2013</a>)
+        ondersteund wordt en welke prefix je moet voorzien voor bepaalde browsers. Op
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis">developer.mozilla.org</a> vind je meer
+        informatie over deze eigenschap.</p>
+    <p>Ook <a href="http://shouldiprefix.com/">shouldiprefix.com</a> probeert te antwoorden op de vraag of je nog
+        prefixen moet gebruiken.</p>
+
+    <p>Telkens opzoeken of er geprefixt moet worden, is lastig. Daarom automatiseren we deze taak! In de <a
+        href="https://github.com/pverhaert/1ITF_Sass_project">startbestanden</a> is een <span>gulp-autoprefixer</span>
+        aanwezig. Die checkt of prefixen nog nodig zijn en bij die controle wordt rekening gehouden met de laatste 2
+        versies van elke browser.</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/v259QplNDKk"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <p>De gebruikte code in dit voorbeeld:</p>
+    <pre>h2:last-child{
+    text-emphasis: '*' $oranje;
+}</pre>
+    <p>De gecompileerde code wordt dankzij de autoprefixer in de startbestanden:</p>
+    <pre>h2:last-child {
+  -webkit-text-emphasis: "*" #f04c25;
+          text-emphasis: "*" #f04c25;
+}</pre>
+    <h2>Prefix alléén als dat écht nodig is!</h2>
+
+</article>
+<p><a href="index.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk2.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+</body>
+</html>

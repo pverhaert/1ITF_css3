@@ -1,0 +1,68 @@
+body {
+  font-family: $lettertype;
+  font-size: $afstand*2;
+  line-height: $afstand*3;
+  background-color: darken($licht, 15%);
+  color: $donker;
+
+  .container {
+    border: $afstand solid $oranje;
+    background-color: $licht;
+    color: $donker;
+    max-width: $afstand*100;
+    margin: $afstand*5 auto;
+    padding: $afstand*5;
+    border-radius: $afstand*2;
+
+    a {
+      background-color: inherit;
+      color: darken(invert($oranje), 10%);
+      font-weight: bold;
+    }
+  }
+
+  > p {
+    text-align: center;
+
+    a {
+
+      background-color: inherit;
+      color: $donker;
+
+      &:hover {
+        color: $oranje;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+h1, h2, h3 {
+  font-family: $lettertypealternatief;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+span {
+  font-weight: bold;
+}
+
+iframe {
+  border: none;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h13.css">
+    <title>Hoofdstuk 13</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 13: 3D transforms</h1>
+    <p>Niet alleen 2D transforms zijn vanaf nu mogelijk, maar ook 3D transforms, dus gebruik makend van een x, yén z-as.
+        Het komt er op neer dat alles wat bij 2D al mogelijk was nu ook over die Z-as kan gebeuren.</p>
+    <p><img src="images/Zas.png" height="484" width="526" alt="X, Y en Z-as"></p>
+    <h2>perspective</h2>
+    <p>De belangrijkste toevoeging bij 3D transforms is de eigenschap <span>perspective</span> om het perspectief te
+        wijzigen en zo een illusie van diepte op te roepen.</p>
+    <pre>{transform: perspective(depth);}</pre>
+    <p>Je ziet dit perspectief pas in werking in combinatie met rotateX en/of rotateY.</p>
+    <p>Een voorbeeld:</p>
+    <pre>transform:perspective(200px) rotateY(-50deg);</pre>
+    <p>Een toepassing:</p>
+    <div>
+        <div></div>
+    </div>
+    <p>De waarde die je meegeeft als attribuut bij perspective, geeft aan of de kijker dichtbij of veraf van het object
+        staat want het vertelt vanop welk punt van de Z-as je kijkt. Een perspectiefwaarde van 100px wordt als normaal
+        beschouwd, een lage waarde (zoals 50px) geeft aan dat je erg dicht bij het object staat, bij hogere waarden sta
+        je verder weg.</p>
+    <p>Een github-project dat verder bouwt op de nieuwe mogelijkheden met 3D transforms, is <a
+        href="http://desandro.github.io/3dtransforms/">desandro.github.io</a></p>
+</article>
+<p><a href="hoofdstuk12.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk14.html"><i
+    class="material-icons">keyboard_arrow_right</i></a></p>
+
+</body>
+</html>

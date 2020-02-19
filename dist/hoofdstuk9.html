@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h9.css">
+    <title>Hoofdstuk 9</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 9: border &amp; box</h1>
+    <h2>Border-radius</h2>
+    <p>Border-radius introduceerden we eerder al. Deze eigenschap is ruim ondersteund en de site <a
+        href="http://border-radius.com/">border-radius.com</a> is handig om wat te experimenteren met asymmetrische
+        afrondingen. Je kunt de border-radius ook procentueel instellen.</p>
+    <pre>{border-radius:50%}</pre>
+    <p>kun je gebruiken om een vierkante
+    afbeelding via CSS cirkelvormig weer te geven zoals in Bootstrap zo vaak gebruikt wordt.
+    </p>
+    <p><img src="images/jongen.png" height="300" width="300" alt="jongen"> + CSS = <img src="images/jongen.png"
+                                                                                        height="300" width="300"
+                                                                                        alt="jongen"></p>
+    <h2>Border-image</h2>
+    <p>Nieuw is dat je de randen nu ook met een afbeelding kunt decoreren. <a href="http://border-image.com/">Border-image.com</a>
+        is een site die je helpt bij het verkennen van de mogelijkheden.
+        Het idee is dat je in 1 afbeelding uitwerkt hoe elke hoek er moet uitzien, hoe de horizontaal en verticaal te
+        gebruiken afbeelding moet zijn en dat je die door de juiste instellingen te gebruiken, combineert in 1 rand.
+    </p>
+    <p>De courant gebruikte waarden voor border-image-repeat:</p>
+    <ul>
+        <li>stretch</li>
+        <li>repeat</li>
+        <li>round</li>
+    </ul>
+    <div id="nr1">op basis van kaarten1.jpg</div>
+    <div id="nr2">op basis van kaarten2.jpg</div>
+    <p>Gebruik de deeleigenschap border-image-repeat: space beter niet, Chrome heeft daar namelijk last mee…
+    </p>
+    <h2>Box-shadow</h2>
+    <p>Naar analogie met de text-shadow is er ook de eigenschap box-shadow om schaduwen aan blokelementen te maken. <a
+        href="http://www.cssmatic.com/">cssmatic.com</a> is een plaats waar je kunt experimenteren met box-shadow. Ook
+        <a href="http://css3gen.com/box-shadow/">css3gen.com</a> en <a href="http://css3generator.com/">css3generator.com</a>
+        kunnen helpen.
+        Net zoals bij de text-shadow-eigenschap zijn de mogelijkheden in de generatoren eerder beperkt. Er zijn nog meer
+        instellingen mogelijk zoals je in het handboek kan ontdekken.
+    </p>
+    <h2>CSS shapes</h2>
+    <p>Wie zich verdiept in het werken met borders, zal ontdekken dat je door handig gebruik te maken van de
+        eigenschappen ook heel atypische vormen kunt realiseren in css, zoals bijvoorbeeld een driehoek, een trapezium,
+        een tekstballon enz. Hoe dit gerealiseerd kan worden, vind je bijvoorbeeld in het artikel
+        <a href="https://css-tricks.com/examples/ShapesOfCSS/">Shapes Of CSS</a> of in <a
+            href="https://code.tutsplus.com/tutorials/css-refreshers-borders--net-24655">CSS refreshers borders</a>.</p>
+    <div id="nr3"></div>
+</article>
+
+<p><a href="hoofdstuk8.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk10.html"><i
+    class="material-icons">keyboard_arrow_right</i></a></p>
+
+</body>
+</html>

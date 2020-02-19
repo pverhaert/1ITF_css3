@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h4.css">
+    <title>Hoofdstuk 4</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 4: pseudo-klassen &amp; pseudo-elementen</h1>
+    <p>In het eerste semester leerde je linken in verschillende toestanden selecteren. Het is belangrijk deze toestanden
+        in de juiste volgorde uit te schrijven.</p>
+    <p><img src="images/lovehate.jpg" height="160" width="200" alt="Love Hate"></p>
+    <p>Wie toegankelijke websites bouwt, mag bovendien de focus-toestand niet vergeten. De correcte volgorde wordt in
+        dat geval:</p>
+
+    <ul>
+        <li>a:link</li>
+        <li>a:visited</li>
+        <li>a:focus</li>
+        <li>a:hover</li>
+        <li>a:active</li>
+    </ul>
+
+    <h2>Selecteren op basis van pseudo-klassen</h2>
+    <p>De nieuwe pseudoklassen :nth-child(N) enz. zijn op zich niet supermoeilijk, maar het vraagt wat inoefenen om er
+        handig mee te worden. Een site die je daarbij kan helpen, is
+        <a href="https://benhowdle.im/cssselectors/">css selectors</a>.</p>
+    <p>Nog een surftip voor wie meer wil lezen:
+        <a href="https://www.sitepoint.com/atoz-css-screencast-nth-child/">nth-child</a></p>
+
+    <h2>Overzicht pseudo-klassen</h2>
+    <ul class="lijst">
+        <li><p>a:link</p>
+            <p>Selects all unvisited links</p></li>
+        <li><p>a:visited</p>
+            <p>Selects all visited links</p></li>
+        <li><p>a:focus</p>
+            <p>Selects the focused link</p></li>
+        <li><p>a:hover</p>
+            <p>Selects links on mouse hover</p></li>
+        <li><p>a:active</p>
+            <p>Selects the active link element</p></li>
+        <li><p>input:checked</p>
+            <p>Selects every checked &lt;input&gt; element</p></li>
+        <li><p>input:disabled</p>
+            <p>Selects every disabled &lt;input&gt; element</p></li>
+        <li><p>p:empty</p>
+            <p>Selects every &lt;p&gt; element with no children</p></li>
+        <li><p>input:enabled</p>
+            <p>Selects every enabled &lt;input&gt; element</p></li>
+        <li><p>p:first-child</p>
+            <p>Selects every &lt;p&gt; element that is the first child of its parent</p></li>
+        <li><p>p:first-of-type</p>
+            <p>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</p></li>
+        <li><p>input:focus</p>
+            <p>Selects the &lt;input&gt; element which has focus</p></li>
+        <li><p>input:in-range</p>
+            <p>Selects &lt;input&gt; elements with a value within a specified range</p></li>
+        <li><p>input:invalid</p>
+            <p>Selects all &lt;input&gt; elements with an invalid value</p></li>
+        <li><p>p:lang(<em>language</em>)</p>
+            <p>Selects all &lt;p&gt; elements with a lang attribute equal to ‘language’</p></li>
+        <li><p>p:last-child</p>
+            <p>Selects every &lt;p&gt; element which is the last child of its parent</p></li>
+        <li><p>p:last-of-type</p>
+            <p>Selects every &lt;p&gt; element which is the last &lt;p&gt; element of its parent</p></li>
+        <li><p>:not(p)</p>
+            <p>Selects every element that is not a &lt;p&gt;</p></li>
+        <li><p>p:nth-child(2)</p>
+            <p>Selects every &lt;p&gt; element that is the second child of its parent</p></li>
+        <li><p>p:nth-child(odd)</p>
+            <p>Selects every &lt;p&gt; element that is an odd child of its parent</p></li>
+        <li><p>p:nth-child(even)</p>
+            <p>Selects every &lt;p&gt; element that is an even child of its parent</p></li>
+        <li><p>p:nth-last-child(2)</p>
+            <p>Selects every &lt;p&gt; element that is the second child of its parent, counting from the last child</p>
+        </li>
+        <li><p>p:nth-last-of-type(2)</p>
+            <p>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, counting from the
+                last
+                child</p></li>
+        <li><p>p:nth-of-type(2)</p>
+            <p>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent</p></li>
+        <li><p>p:only-of-type</p>
+            <p>Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent</p></li>
+        <li><p>p:only-child</p>
+            <p>Selects every &lt;p&gt; element that is the only child of its parent</p></li>
+        <li><p>input:optional</p>
+            <p>Selects &lt;input&gt; elements with no ‘required’ attribute</p></li>
+        <li><p>input:out-of-range</p>
+            <p>Selects &lt;input&gt; elements with a value outside a specified range</p></li>
+        <li><p>input:read-only</p>
+            <p>Selects &lt;input&gt; elements with the ‘readonly’ attribute specified</p></li>
+        <li><p>input:read-write</p>
+            <p>Selects &lt;input&gt; elements with the ‘readonly’ attribute not specified</p></li>
+        <li><p>input:required</p>
+            <p>Selects &lt;input&gt; elements with the ‘required’ attribute specified</p></li>
+        <li><p>:root</p>
+            <p>Selects the documents root element</p></li>
+        <li><p>#id:target</p>
+            <p>Selects the current active #id element</p></li>
+        <li><p>input:valid</p>
+            <p>Selects all &lt;input&gt; elements with a valid value</p></li>
+    </ul>
+
+    <h2>Selecteren op basis van pseudo-elementen</h2>
+    <p>Je leerde in semester 1 al de eerste letter van een paragraaf of ander blokelement anders op te maken aan de hand
+        van ::first-letter
+        Deze schrijfwijze met :: geldt ook voor de andere pseudo-elementen.
+    </p>
+    <h2>Overzicht pseudo-elementen</h2>
+    <ul class="lijst">
+        <li><p>p::after</p>
+            <p>Insert content after &lt;p&gt; element</p></li>
+        <li><p>p::before</p>
+            <p>Insert content before &lt;p&gt; element</p></li>
+        <li><p>p::first-letter</p>
+            <p>Selects the first letter of every &lt;p&gt; element</p></li>
+        <li><p>p::first-line</p>
+            <p>Selects the first line of every &lt;p&gt; element</p></li>
+        <li><p>::selection</p>
+            <p>Selects the portion of an element that is selected by a user</p></li>
+
+    </ul>
+</article>
+<p><a href="hoofdstuk3.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk5.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+</body>
+</html>

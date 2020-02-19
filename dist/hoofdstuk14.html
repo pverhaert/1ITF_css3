@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h14.css">
+    <title>Hoofdstuk 14</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 14: transitions &amp; animations</h1>
+    <p>We kunnen via <span>transforms</span> het uiterlijk beïnvloeden van elementen uit het ontwerp.
+        <span>Tot nu toe</span> ging dat enkel bij
+        het laden van de pagina of - <span>heel bruusk</span> - bij hover over een element. Eerst leer je met
+        transitions te werken
+        om de transforms in een aantal (milli)seconden te laten plaatsvinden zodat de overgang van de ene naar de andere
+        toestand duidelijk te zien is. Daarna leer je complexere animaties te maken.</p>
+    <h2>transitions</h2>
+    <p>CSS transitions laten je toe om een effect geleidelijk te laten overgaan van de ene stijl naar de andere. </p>
+    <h3>Algemene schrijfwijze</h3>
+    <pre>selector {transition: transition-property
+        transition-duration
+        transition-timing-function
+        transition-delay;}</pre>
+    <ul>
+        <li>Je stelt de verplichte eigenschap <span>transition-property</span> in die je wil laten veranderen</li>
+        <li>Je bent verplicht de duur <span>transition-duration</span> van de overgang te bepalen in seconden (s) of
+            milliseconden
+            (ms)
+        </li>
+        <li>Je stelt eventueel de snelheid van het effect <span>transition-timing-function</span> in</li>
+        <li>Je stelt eventueel in wanneer het effect moet starten via <span>transition-delay</span> in seconden (s) of
+            milliseconden (ms)
+        </li>
+    </ul>
+    <p>Het effect start wanneer de gespecifieerde transition-property van waarde verandert, bijvoorbeeld bij <span>:hover</span>
+        of bij <span>:active</span> of ondertussen ook bij <span>:focus</span> en <span>:checked</span>.
+        Wanneer je niet meer met de muis zweeft over dat element of de muis niet meer ingedrukt is op dat element, gaat
+        dat element terug zijn oorspronkelijke stijl krijgen.
+    </p>
+    <p>Je kunt meerdere effecten samen laten plaatsvinden, je scheidt die dan van elkaar met een komma.</p>
+    <p></p>
+    <p>Meer lezen over transitions kan bijvoorbeeld op de pagina <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions">developer.mozilla.org</a>
+    </p>
+    <p>Transitions worden ondertussen ruim ondersteund. </p>
+    <h3 id="vb1">Voorbeeld</h3>
+    <p>Hover eens over de titel hierboven! De gebruikte code:</p>
+    <pre>#vb1 {
+  background-color: inherit;
+  color: $oranje;
+  display:inline-block;
+  transition: color 500ms linear,transform 1s ease-in 500ms;
+
+  &:hover {
+    background-color: inherit;
+    color: darken(invert($oranje),15%);
+    transform: rotate(-5deg) scale(1.5);
+  }
+}</pre>
+    <p>Wanneer je alle wijzigingen die er moeten gebeuren op dezelfde manier wil laten verlopen, dan mag je werken met
+        het sleutelwoord 'all' in plaats van alle te wijzigen eigenschappen apart op te sommen.</p>
+    <p>Je schrijft de transition dus op de algemene selector uit en niet op de :hover-toestand want dan wordt de
+        transition niet meer geleidelijk ongedaan gemaakt wanneer je niet langer met de muis over het element
+        zweeft.</p>
+    <h3>Extra tutorial</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JDNXYOHyOq4?start=27"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h2>animations</h2>
+    <p>Om animaties te maken had je vroeger Flash of JavaScript nodig. Nu kan je met CSS keyframes ook al animaties
+        maken zonder scriptkennis.</p>
+    <p>Bekijk deze pagina (uit 2010!!!) eens in <span>Internet Explorer</span>: <a
+        href="http://www.optimum7.com/css3-man/animation.html">spiderman</a> en
+        bestudeer de broncode</p>
+    <p>Blijkbaar schreef de maker 3 verschillende css-bestanden, voor verschillende soorten browsers. Het is niet meer
+        nodig 3 CSS-bestanden te gebruiken want je kunt uiteraard ook met prefixen werken in 1 CSS-bestand. Ondertussen
+        zijn we flink wat browserupdates verder en moet er helemaal niet meer geprefixt worden om deze animatie tot zijn
+        recht te laten komen. </p>
+    <p>De animatie wordt ondertussen in recente browsers niet meer getoond: de pagina wordt via https:// bezocht terwijl
+        de jQuery-bibliotheek via http:// benaderd wordt en dat is onveilig. Daarom linken wij zelf altijd via https://
+        naar recente CDN's.</p>
+    <p>Het project is goed gedocumenteerd, een artikel over deze animatie vind je op <a
+        href="http://www.optimum7.com/internet-marketing/web-development/pure-css3-spiderman-ipad-cartoon-jquery-html5-no-flash.html">optimum7.com</a>.
+        De maker gebruikte heel veel afbeeldingen, dat wordt beschreven onder de titel 'Character & background art'.
+    </p>
+    <p>In de broncode zie je nieuwe elementen. @keyframes en de eigenschap animation zijn in dit project erg belangrijk.
+        Daarnaast worden de transforms gebruikt die we al eerder toegelicht hebben.</p>
+    <p>Er bestaan 2 soorten animaties:</p>
+    <ul>
+        <li>animaties die op een vaststaand moment plaatsvinden zonder tussenkomst van de gebruiker</li>
+        <li>animaties die afhankelijk zijn van de interactie van de gebruiker waarbij mogelijk nog wel (een beetje)
+            Javascript nodig is
+        </li>
+    </ul>
+    <p>Op dit moment behandelen we animaties zonder Javascript, dus animaties bij het laden van de pagina of bij een
+        aantal via CSS vast te stellen acties zoals hover.</p>
+
+    <p>Wanneer je animaties maakt, definieer je eerst de animatie en vervolgens vertel je wat er op elk moment van de
+        animatie moet gebeuren. De 2 stappen die je moet zetten, worden hieronder verder uitgewerkt.</p>
+
+    <h3>Keyframe-based animaties: stap 1</h3>
+    <p>Kies een animatienaam en schrijf uit op welke keyframes van de animatie er iets moet veranderen aan het element
+        dat de
+        animatie moet ondergaan. Je moet dus uitschrijven welke keyframes er zijn en wat er op dat moment van de
+        animatie moet gebeuren. </p>
+    <ul>
+        <li>Gebruik de selector @keyframes animatienaam {}</li>
+        <li>Schrijf voor elk keyframe uit wat er moet gebeuren.</li>
+        <li>In plaats van 0% {} mag je ook schrijven from {}</li>
+        <li>In plaats van 100% {} mag je ook schrijven to {}</li>
+    </ul>
+    <p>Tussen de accolades zet je bij elk keyframe wat er moet gebeuren. Je kan daar transforms schrijven en je kan daar
+        gewone eigenschappen met hun nieuwe waarde schrijven.</p>
+
+    <p>Bijvoorbeeld:</p>
+    <pre>@keyframes verkleuren_en_verplaatsen {
+  0% {
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  25% {
+    background-color: orange;
+  }
+
+  50% {
+    background-color: yellow;
+  }
+
+  75% {
+    background-color: green;
+  }
+
+  100% {
+    border-radius: 0%;
+    background-color: blue;
+    transform: translateX(670px);
+  }
+}</pre>
+    <h3>Keyframe-based animaties: stap 2</h3>
+
+    <p>Schrijf voor het element dat geanimeerd moet worden uit hoe die animatie moet verlopen:</p>
+    <ul>
+        <li>De animatie moet een voor het bestand unieke naam krijgen, dit regel je via de eigenschap <span>animation-name</span>
+        </li>
+        <li>De animatie moet een duurtijd krijgen, dit regel je via de eigenschap <span>animation-duration</span>. Je
+            geeft een
+            aantal milliseconden of seconden op en vergeet niet ms of s te schrijven
+        </li>
+        <li>De animatie kan een timing-functie krijgen, dit regel je via de eigenschap
+            <span>animation-timing-function</span>. De
+            mogelijke waarden zijn linear, ease, ease-in enz... (<a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function">timing function</a>). Lea
+            Verou heeft ook een handig tooltje gemaakt om <a href="http://cubic-bezier.com/">cubic-bezier</a> functions
+            te maken en te vergelijken met andere opties.
+        </li>
+        <li>De animatie kan een herhaling krijgen, dit regel je via de eigenschap <span>animation-iteration-count</span>.
+            De
+            mogelijke waarden zijn een positief getal (ook 0.5 voor een halve animatie) of infinite
+        </li>
+        <li>De animatie kan een richting krijgen, dit regel je via de eigenschap <span>animation-direction</span>. De
+            mogelijke
+            waarden zijn normal, alternate, reverse, alternate-reverse
+        </li>
+        <li>De animatie kan een afspeelstatus krijgen, dit regel je via de eigenschap <span>animation-play-state</span>.
+            De mogelijke
+            waarden zijn running en paused (niet door alle browsers ondersteund, verdwijnt mogelijk nog uit de
+            specificaties)
+        </li>
+        <li>De animatie kan een vertraging krijgen, dit regel je via de eigenschap <span>animation-delay</span>. Je
+            geeft een aantal
+            milliseconden of seconden op en vergeet niet ms of s te schrijven.
+        </li>
+        <li>De animatie kan een vulmodus krijgen, dit regel je via de eigenschap <span>animation-fill-mode</span>. De
+            mogelijke
+            waarden zijn none, forwards, backwards, both ((nog) niet door alle browsers ondersteund).
+        </li>
+    </ul>
+    <p>Je kunt ook de verzameleigenschap <span>animation</span> gebruiken.</p>
+    <p>Bijvoorbeeld:</p>
+    <pre>article > div {
+  height: 30px;
+  width: 30px;
+  animation-name: verkleuren_en_verplaatsen;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-delay: 2s;
+}</pre>
+
+    <div></div>
+
+    <p>Meer leren over animaties kun je via <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations">using CSS animations</a>.
+    </p>
+    <p>Een vrij goede beginnershandleiding vind je op <a
+        href="https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068">webdesign.tutsplus.com</a>
+    </p>
+    <p>De beste plaats om heel veel te leren over transforms, transitions, animations enz. is <a
+        href="http://codepen.io/">codepen.io</a> waar je projecten vindt die andere webdesigners daar delen. Gebruik
+        als zoekterm bijvoorbeeld css3 animation en ga op zoek naar projecten die zonder Javascript opgebouwd werden!
+    </p>
+    <h3>Extra tutorial</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/iUSC_7hcPPo?start=49"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zHUpx90NerM"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <h3>Surftips</h3>
+    <p>Er zijn ontzettend veel goede voorbeelden en tutorials te vinden van CSS-transitions en CSS-animations. Een paar
+        recente en een paar wat oudere surftips:</p>
+    <ul>
+        <li><a href="https://www.gradient-animator.com/">https://www.gradient-animator.com/</a></li>
+        <li><a href="https://zellwk.com/blog/css-animations/">https://zellwk.com/blog/css-animations/</a></li>
+        <li><a href="https://css-tricks.com/making-css-animations-feel-natural/">https://css-tricks.com/making-css-animations-feel-natural/</a>
+        </li>
+        <li><a href="https://cloudinary.com/blog/creating_html5_animations">https://cloudinary.com/blog/creating_html5_animations</a>
+        </li>
+        <li><a href="https://www.impressivewebs.com/demo-files/css3-animated-scene/">https://www.impressivewebs.com/demo-files/css3-animated-scene/</a>
+        </li>
+        <li><a href="https://designmodo.com/responsive-animation/">https://designmodo.com/responsive-animation/</a></li>
+        <li><a href="https://speckyboy.com/css-animation/">https://speckyboy.com/css-animation/</a></li>
+    </ul>
+    <h3>Best practices</h3>
+    <p>Transities en animaties worden vaak gebruikt in websites, maar dan wel op een zeer bescheiden, haast
+        minimalistische manier. Op github springen 2 projecten in het oog, namelijk
+        <a href="https://github.com/miniMAC/magic">https://github.com/miniMAC/magic</a> en <a
+            href="https://github.com/daneden/animate.css">https://github.com/daneden/animate.css</a>, 2 plaatsen
+        waar je een css-bestand kunt downloaden om het te linken aan je project en daaruit via klasse-aanduidingen of
+        jQuery animaties aan te brengen. </p>
+    <p>Voor een demo van de mogelijkheden kun je terecht op:</p>
+    <ul>
+        <li><a href="https://www.minimamente.com/example/magic_animations/">https://www.minimamente.com/example/magic_animations/</a>
+        </li>
+        <li><a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a></li>
+    </ul>
+    <p>Al wat ouder, maar zeker niet ‘outdated’ is wat je vindt op <a
+        href="https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/">tympanus.net</a> en de
+        bijhorende <a href="https://tympanus.net/Tutorials/OriginalHoverEffects/index.html">pagina met demo’s</a></p>
+    <p>Nog niet overtuigd van de mogelijkheden van CSS3? Bestudeer dan zeker eens <a
+        href="http://pattle.github.io/simpsons-in-css/">http://pattle.github.io/simpsons-in-css/</a> waar je de code
+        terugvindt waarmee je karakters van ‘the Simpsons’ via CSS3 kunt opbouwen of
+        <a href="http://cssaz.tumblr.com/">http://cssaz.tumblr.com/</a> voor een geanimeerd alfabet.</p>
+    <h2>Surftip</h2>
+    <p>Surf (opnieuw) naar <a href="https://keyframes.app/">keyframes.app</a>. In de editor kan je experimenteren met
+        animaties door onderaan een extra keyframe in te voegen en vervolgens te definiëren welke wijzigingen er
+        allemaal moeten gebeuren. De parameters van de animatie kun je via invoervakjes instellen. Test de animatie via
+        de knop 'Start Animation'. De broncode van de animatie kun je opvragen via 'Show Output CSS'.</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FacpmseuwRg"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h2>Besluit</h2>
+    <p>Transitions en animations gaven de doodsteek aan Flash. Ook zonder Javascript kan je al hele leuke animaties
+        maken.
+        <span>Gebruik Javascript in animaties alleen maar als het echt niet zonder scripting kan!</span></p>
+</article>
+<p><a href="hoofdstuk13.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="index.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+
+</body>
+</html>

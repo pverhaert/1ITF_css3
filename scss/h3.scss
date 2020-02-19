@@ -1,0 +1,41 @@
+@import "variables";
+@import "reboot";
+@import "lijst";
+
+article a {
+  text-decoration: none;
+
+  &[href^="mailto"] {
+    background-color: inherit;
+    color: $oranje;
+  }
+
+  &[href*="facebook"] {
+    background-color: lighten($oranje, 30%);
+    color: $donker;
+
+    &:hover {
+      color: lighten($oranje, 30%);
+      background-color: $donker;
+    }
+  }
+
+  &[href$="#"] {
+    background-color: inherit;
+    color: $donker;
+    padding-left: 25px;
+    background-image: url(../images/pijl.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+
+    &:hover {
+      background-color: $donker;
+      color: $licht;
+      background-image: url(../images/pijl2.png);
+    }
+  }
+
+
+}
+
+

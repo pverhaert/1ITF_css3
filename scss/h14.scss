@@ -1,0 +1,56 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+#vb1 {
+  background-color: inherit;
+  color: $oranje;
+  display: inline-block;
+  transition: color 500ms linear, transform 1s ease-in 500ms;
+
+  &:hover {
+    background-color: inherit;
+    color: darken(invert($oranje), 15%);
+    transform: rotate(-5deg) scale(1.5);
+  }
+}
+
+article > div {
+  height: 30px;
+  width: 30px;
+  animation-name: verkleuren_en_verplaatsen;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-delay: 2s;
+}
+
+@keyframes verkleuren_en_verplaatsen {
+  0% {
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  25% {
+    background-color: orange;
+  }
+
+  50% {
+    background-color: yellow;
+  }
+
+  75% {
+    background-color: green;
+  }
+
+  100% {
+    border-radius: 0%;
+    background-color: blue;
+    transform: translateX(670px);
+  }
+}
+
+
+

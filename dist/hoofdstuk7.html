@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h7.css">
+    <title>Hoofdstuk 7</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 7: multiple columns</h1>
+    <p>Hoe je met een grid werkt, is stilaan wel duidelijk. Hoe je in een grid een tekst van een artikel dat op het grid
+        een zekere breedte inneemt, automatisch in kolommen kunt verdelen, kwam nog niet aan bod. Deze functionaliteit
+        vergelijk je best met de mogelijkheden in een tekstverwerker om een tekst in kolommen te zetten. Teksten in
+        kolommen zetten, doe je om het aantal karakters/woorden per lijn te beperken om de leeservaring aangenamer te
+        maken. IE/Edge waren overigens koploper in dit thema dankzij de ruime ervaring met dit onderwerp omdat er
+        toevallig in die firma ook een tekstverwerker gebouwd wordt.</p>
+    <p>Er zijn verschillende manieren om tot kolommen te komen. </p>
+
+    <h2>Verzameleigenschap columns</h2>
+    <p id="vb1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus dicta dolor impedit ipsum iste
+        repellendus vitae voluptas. Amet animi aut dicta distinctio dolores doloribus earum eius error facere hic illum
+        inventore ipsa labore modi nam necessitatibus, nesciunt nostrum optio perferendis, quis ratione repellat,
+        repellendus sapiente sequi sunt totam ut velit voluptates voluptatibus voluptatum. At, corporis, libero.
+        Consequatur consequuntur cupiditate debitis impedit minus rerum tempora? Aliquid enim obcaecati suscipit vitae.
+        Corporis ea eligendi, facere fuga impedit iste laudantium neque omnis perferendis perspiciatis porro, ratione
+        recusandae repellat repudiandae rerum, saepe tenetur ullam voluptas voluptatem voluptatibus. Consequuntur
+        distinctio magnam numquam praesentium quaerat? Ab architecto assumenda atque beatae commodi consectetur corporis
+        culpa cum delectus deleniti deserunt doloribus ea earum eius enim facilis in itaque iure iusto labore nam
+        nesciunt nobis, obcaecati odio qui recusandae sapiente similique tempora temporibus unde ut vel voluptate
+        voluptates. Accusamus alias aliquam beatae consectetur cumque, debitis doloremque ex excepturi expedita
+        explicabo id ipsam iusto laborum minus molestias nam natus neque nostrum, obcaecati officiis pariatur quos
+        sapiente totam voluptate voluptates! Dicta, enim eos eveniet, facere inventore iste magnam nam necessitatibus
+        neque nesciunt nobis obcaecati optio, possimus quibusdam recusandae repellendus repudiandae ut velit veniam
+        vitae? Accusantium corporis inventore nam quidem. Dolore?
+    </p>
+    <p>De gebruikte code in dit voorbeeld:</p>
+    <pre>#vb1 {
+        columns: 100px 3;
+  }</pre>
+    <p>Je geeft eerst een minimumbreedte voor de kolommen op en daarna een voorkeursaantal. Als de minimumbreedte
+        verhindert dat het voorkeursaantal kolommen gegenereerd worden, dan worden er minder kolommen gemaakt.</p>
+    <h2>Deeleigenschappen</h2>
+    <p id="vb2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos enim eveniet facere nulla,
+        obcaecati, odio
+        optio placeat praesentium quia quisquam, saepe suscipit tempora tempore ullam unde! Culpa doloremque illum iusto
+        libero minima porro quod recusandae repudiandae sit vel. Accusamus aliquam aliquid, commodi cum eius error ex!
+        Ab aliquid laborum minima officiis quos! Asperiores aspernatur cumque dicta dignissimos doloremque dolores eum
+        eveniet hic id impedit ipsam laudantium minus necessitatibus nulla, odio omnis placeat quibusdam soluta
+        voluptatem, voluptates. Adipisci at consequuntur cum cupiditate delectus, nulla sapiente temporibus ullam vel
+        vitae. Aut debitis exercitationem id molestias nostrum. Accusamus accusantium, aperiam consequuntur cumque dolor
+        dolorem dolores ea earum exercitationem fugiat illo illum molestiae nesciunt nulla perferendis porro quas
+        quibusdam sequi similique, sit suscipit totam ut? Dolorem est, fugit id incidunt laboriosam numquam quod vitae?
+        Accusamus eos harum totam voluptatem. Cupiditate doloremque ex incidunt labore quisquam reprehenderit soluta
+        tenetur! Ad aspernatur beatae dicta doloremque, ex iste maiores quos sunt? Architecto culpa in ipsum. A aliquid
+        architecto commodi consequatur cum cupiditate deserunt ducimus eligendi esse et exercitationem expedita fugit
+        impedit ipsa ipsum modi molestiae mollitia officiis quos reiciendis rem reprehenderit sed, suscipit ut velit
+        veniam voluptatem? Cum deleniti eum eveniet modi nesciunt nisi porro qui saepe?</p>
+
+    <p>De gebruikte code in dit voorbeeld:</p>
+    <pre>#vb2 {
+        column-count: 4;
+        column-width: 100px;
+        column-gap: $afstand*5;
+        column-rule: $afstand/2 dotted $oranje
+  }</pre>
+    <p>Je kunt dus ook alle deeleigenschappen apart instellen. Er zijn bovendien nog extra lay-outmogelijkheden: je kunt
+        bijvoorbeeld ook een scheidingslijn definiëren en de afstand tussen de kolommen regelen.</p>
+</article>
+
+<p><a href="hoofdstuk6.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk8.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+</body>
+</html>

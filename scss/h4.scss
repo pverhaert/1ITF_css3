@@ -1,0 +1,22 @@
+@import "variables";
+@import "reboot";
+@import "lijst";
+
+ul:first-of-type {
+  border: 2px solid $donker;
+
+  li:nth-child(3) {
+    font-weight: bold;
+    background-color: inherit;
+    color: $oranje;
+  }
+}
+
+h2::first-letter {
+  background-color: inherit;
+  color: $oranje;
+}
+
+.lijst li:nth-child(odd) {
+  background-color: darken($licht, 10%);
+}

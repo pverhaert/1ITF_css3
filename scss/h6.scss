@@ -1,0 +1,17 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+p {
+  margin: 5*$afstand;
+
+  span {
+    font-size: 5em;
+    font-family: $lettertypealternatief;
+    text-shadow: 0 -2px 1px $oranje,
+    0 -4px 3px lighten(invert($oranje), 20%),
+    0 -6px 6px lighten($donker, 30%),
+    0 -9px 12px $donker;
+  }
+}
+

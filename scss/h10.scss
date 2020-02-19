@@ -1,0 +1,11 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+h2 {
+  padding: 2rem;
+  color: rebeccapurple;
+  background-color: inherit;
+  border: 5px solid currentColor;
+  box-shadow: 0 0 5px currentColor;
+}

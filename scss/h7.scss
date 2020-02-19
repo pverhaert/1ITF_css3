@@ -1,0 +1,22 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+h2 + p {
+  font-size: x-small;
+  text-align: left;
+
+  &#vb1 {
+    columns: 100px 3;
+  }
+
+  &#vb2 {
+    column-count: 4;
+    column-width: 100px;
+    column-gap: $afstand*5;
+    column-rule: $afstand/2 dotted $oranje
+  }
+}
+
+
+

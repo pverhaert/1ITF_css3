@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h3.css">
+    <title>Hoofdstuk 3</title>
+</head>
+<body>
+<article class="container">
+    <h1>Hoofdstuk 3: selectors</h1>
+
+    <h2>Inleiding</h2>
+    <p>Zoals je al merkte in de CSS-bestanden bij formulieren, is er op het vlak van selectors veel gewijzigd in CSS3.
+        Een leuke inleiding over de nieuwe selectors krijg je via
+        <a href="http://flukeout.github.io/">flukeout.github.io</a>. Neem deze interactieve handleiding door en noteer
+        de theorie die je nog niet kende.
+    </p>
+    <p><img src="images/selectors.png" alt="selectoroefening" height="314" width="395"></p>
+    <p>Er zijn zoals je merkt veel selectors bijgekomen.</p>
+
+    <h2>Selecteren op basis van attributen</h2>
+    <p>Je kunt nu ook selecteren op (een stuk van) een attribuut van
+        een element.
+    </p>
+    <ul>
+        <li>^= staat voor 'begint met'</li>
+        <li>$= staat voor 'eindigt op'</li>
+        <li>*= staat voor 'bevat'</li>
+    </ul>
+    <p>Wanneer je naargelang het gebruikte protocoldeel in de hyperlinks een ander prentje wil tonen:</p>
+    <p><img src="images/begintmet.png" height="79" width="376" alt="selecteren op attribuut beginnend met"></p>
+    <p>Wanneer je naargelang de extensie van het bestand dat gedownload kan worden, een ander prentje wil tonen:</p>
+    <p><img src="images/eindigtop.png" height="71" width="355" alt="selecteren op attribuut eindigend op"></p>
+    <p>Wanneer je elke link wil selecteren die ergens in het attribuut ‘title’ de tekst ‘image’ bevat:</p>
+    <p><img src="images/bevat.png" height="40" width="167" alt="selecteren op attribuut dat een waarde bevat"></p>
+    <p>Je kunt deze attribuuttesten ook combineren. Alleen een http://-link naar een pdf-bestand ergens in de map
+        folder2 zal nu een andere opmaak krijgen.
+    </p>
+    <p><img src="images/combinatie.png" height="40" width="365" alt="selecteren op gecombineerde voorwaarden"></p>
+
+    <h2>Een paar voorbeelden</h2>
+    <ul>
+        <li><a href="http://www.thomasmore.be">Thomas More</a></li>
+        <li><a href="mailto:info@thomasmore.be">Mail de webmaster</a></li>
+        <li><a href="https://www.facebook.com/ToegepasteInformatica.ThomasMoreBE/">Toegepaste Informatica</a></li>
+        <li><a href="https://www.facebook.com/ElektronicaICT.ThomasMoreBE/">Elektronica-ICT</a></li>
+        <li><a href="#">Naar boven</a></li>
+    </ul>
+
+    <h2>Overzicht selectors</h2>
+    <ul class="lijst">
+        <li>
+            <p>.class</p>
+            <p>Selects all elements with .class</p>
+        </li>
+        <li>
+            <p>#id</p>
+            <p>Selects all elements with #id</p>
+        </li>
+        <li>
+            <p>*</p>
+            <p>Selects all elements</p>
+        </li>
+        <li>
+            <p>div</p>
+            <p>Selects all &lt;div&gt; elements</p>
+        </li>
+		 <li>
+            <p>div, p</p>
+            <p>Selects all &lt;div&gt; and &lt;p&gt; elements</p>
+        </li>
+        <li>
+            <p>div p</p>
+            <p>Selects all &lt;p&gt; in &lt;div&gt; elements</p>
+        </li>
+        <li>
+            <p>div > p</p>
+            <p>Selects all &lt;p&gt; elements that are a direct descendant of a &lt;div&gt; element</p>
+        </li>
+        <li>
+            <p>div + p</p>
+            <p>Selects all &lt;p&gt; elements that are the next sibling of (i.e. placed directly after) &lt;div&gt;
+                elements
+            </p>
+        </li>
+        <li>
+            <p>div ~ p</p>
+            <p>Selects all &lt;p&gt; elements that follow, and are siblings of, &lt;div&gt; elements</p>
+        </li>
+    </ul>
+    <h2>Overzicht attributen</h2>
+    <ul class="lijst">
+        <li>
+            <p>[attribute]</p>
+            <p>Selects all elements with the specified attribute</p>
+        </li>
+        <li>
+            <p>[attribute="value"]</p>
+            <p>Selects all elements where the specified attribute is equal to "value"</p>
+        </li>
+        <li>
+            <p>[attribute~="value"]</p>
+            <p>Selects all elements with the specified attribute containing the word "value"</p>
+        </li>
+        <li>
+            <p>[attribute^="value"]</p>
+            <p>Selects all elements with the specified attribute beginning with "value"</p>
+        </li>
+        <li>
+            <p>[attribute$="value"]</p>
+            <p>Selects all elements with the specified attribute ending with "value"</p>
+        </li>
+        <li>
+            <p>[attribute*="value"]</p>
+            <p>Selects all elements with the specified attribute containing the substring "value"</p>
+        </li>
+    </ul>
+
+
+</article>
+<p><a href="hoofdstuk2.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+        class="material-icons">home</i></a> <a href="hoofdstuk4.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+</body>
+</html>

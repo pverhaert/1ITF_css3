@@ -1,0 +1,19 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+li {
+  list-style-type: square;
+
+  li {
+    list-style-type: none;
+    background-color: $licht;
+    color: $oranje;
+    font-weight: bold;
+  }
+}
+
+
+h2:last-child {
+  text-emphasis: '*' $oranje;
+}

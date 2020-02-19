@@ -1,0 +1,20 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+article > div {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #000;
+
+  > div {
+    height: 100px;
+    width: 100px;
+    background-color: darken(invert($oranje), 15%);
+    color: $licht;
+    font-weight: bold;
+    text-align: center;
+    transform: perspective(200px) rotateY(-50deg);
+
+  }
+}

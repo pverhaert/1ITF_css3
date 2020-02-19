@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h8.css">
+    <title>Hoofdstuk 8</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 8: background-images</h1>
+    <p>Op het vlak van achtergrondafbeeldingen maakte je al kennis met nieuwe eigenschappen in het hoofdstuk over
+        responsieve afbeeldingen. Hier worden alle nieuwigheden nog eens op een rijtje gezet.</p>
+    <h2>Background-repeat</h2>
+    <p>De eigenschap ‘background-repeat’ bestond in CSS2 al. We hadden toen niet veel opties, no-repeat, repeat-x,
+        repeat-y en repeat waren de mogelijkheden.
+        In CSS3 komen daar de mogelijkheden space en round bij.
+    </p>
+
+    <div id="nr1"></div>
+    <p>Bij <span>space</span> wordt bij het herhalen rekening gehouden met de grootte van de afbeelding en wordt geen
+        enkele afbeelding afgesneden of uit proportie geschaald. Bij het tegelen worden altijd hele afbeeldingen
+        getoond, maar wel als dat nodig is met wat meer ruimte tussen.</p>
+    <div id="nr2"></div>
+    <p>Bij <span>round</span> wordt bij het herhalen ook geen enkele afbeelding afgesneden. Bij het tegelen worden
+        altijd hele afbeeldingen getoond, maar wel als dat nodig is geschaald (en zelfs uit proportie als het niet
+        anders kan). Er wordt nergens witruimte tussengevoegd.</p>
+    <div id="nr3"></div>
+
+    <h2>Meerdere achtergrondafbeeldingen combineren</h2>
+    <p>Het is in CSS3 mogelijk meerdere achtergrondafbeeldingen te combineren. Het is daarbij belangrijk rekening te
+        houden met de stapelvolgorde. De afbeelding die laatst geladen wordt, komt onderaan te liggen. De afbeelding die
+        eerst geladen wordt, komt bovenaan op de stapel te liggen.
+        <span>Dit werkt dus andersom dan je zou verwachten</span>.</p>
+    <div id="nr4"></div>
+    <p>De code die hiervoor nodig was:</p>
+    <pre>#nr4 {
+  background-image: url(../images/man.png), url(../images/man.png),
+        url(../images/landschap.png);
+  background-repeat: no-repeat;
+  background-position: 20% 70%, 40% 60%, 0% 0%;
+}</pre>
+</article>
+<p><a href="hoofdstuk7.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+    class="material-icons">home</i></a> <a href="hoofdstuk9.html"><i class="material-icons">keyboard_arrow_right</i></a>
+</p>
+
+</body>
+</html>

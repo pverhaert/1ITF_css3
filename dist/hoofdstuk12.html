@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/h12.css">
+    <title>Hoofdstuk 12</title>
+</head>
+<body>
+<article class="container"><h1>Hoofdstuk 12: 2D transforms</h1>
+    <p>Webontwerpen waren tot nu toe vooral in horizontale en verticale stroken opgedeeld. Browsers konden lange tijd
+        niets anders tonen dan horizontale en verticale 'blokken'.</p>
+    <p>Er is verandering op komst, dankzij de CSS transforms module waar al een aantal jaren aan gewerkt wordt en
+        waarvan een aantal elementen al goed door de browsers ondersteund worden.
+        Mogelijke transformaties zijn schalen, roteren, overhellen en verplaatsen en de respectievelijke functies
+        daarvoor zijn <span>scale</span>, <span>rotate</span>, <span>skew</span> en <span>translate</span>. Surf eens
+        naar <a href="http://www.css3maker.com/css3-transform.html">css3maker.com</a> om de mogelijkheden te verkennen.
+        Het prefixen is bij transforms voor recente browsers niet meer nodig.
+    </p>
+    <p><span>TIP:</span> Kijk zeker ook eens op <a href="http://codepen.io/vineethtr/pen/XKKEgM">codepen.io</a> om te
+        zien wat met
+        deze acties gerealiseerd kan worden.</p>
+    <p>Let wel goed op bij het uitwerken van transforms, want de andere elementen in de pagina-opbouw worden niet ‘aan
+        de kant geduwd’. Je kunt zo dus wel degelijk overlappingen van inhouden krijgen. De oorspronkelijke ruimte waar
+        het element stond, wordt opengelaten.</p>
+    <p>Transforms kunnen direct bij het openen van een webpagina door de browser worden gerenderd, deel uitmaken van
+        transitions (later dit hoofdstuk) of met javascript worden uitgevoerd (later in de cursus). </p>
+    <p>De meeste browsers gebruiken het middelpunt van het te veranderen object als beginpunt, maar het manipuleren van
+        dat referentiepunt is ondertussen ook al mogelijk.</p>
+    <h2>Syntax</h2>
+    <pre>selector {transform:function(a[,b]);}</pre>
+    <p>Waarbij op de plaats van function de volgende mogelijkheden bestaan:</p>
+    <ul>
+        <li>translate, translateX, translateY</li>
+        <li>scale, scaleX, scaleY</li>
+        <li>rotate</li>
+        <li>skew, skewX, skewY</li>
+    </ul>
+    <h2>translate</h2>
+    <p>Translate dient om een element in een bepaalde richting te verplaatsen ten opzichte van zijn oorspronkelijke
+        positie. Bij translate schrijf je
+        2 parameters om aan te geven hoe de verplaatsing horizontaal en verticaal moet gebeuren. Alle CSS-afstandsmaten
+        kunnen gebruikt worden.
+    </p>
+    <p>Een voorbeeld:</p>
+    <pre>transform:translate(20px,-20px);</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>20px verschuiving over de X-as = meer naar rechts</li>
+        <li>-20px verschuiving over de Y-as = meer naar boven</li>
+    </ul>
+    <p>Wanneer je enkel over de X-as of enkel over de Y-as wil verschuiven ten opzichte van zijn oorspronkelijke
+        positie, kun je gebruik maken van <span>translateX</span> of <span>translateY</span>. Je schrijft dan
+        logischerwijze maar 1 parameter.</p>
+
+    <h2>scale</h2>
+    <p>Scale dient om een element te vergroten of te verkleinen ten opzichte van zijn oorspronkelijke afmetingen. Bij
+        scale schrijf je
+        1 of 2 parameters. Dit moeten getallen zonder maataanduiding zijn die aangeven in welke mate er geschaald moet
+        worden in horizontale en/of verticale richting.
+    </p>
+    <p>Een eerste voorbeeld:</p>
+    <pre>transform:scale(1.1,0.6);</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>110% breedte in plaats van 100%</li>
+        <li>60% hoogte in plaats van 100%</li>
+    </ul>
+    <p>Een tweede voorbeeld:</p>
+    <pre>transform:scale(1.1);</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>110% breedte in plaats van 100%</li>
+        <li>110% hoogte in plaats van 100%</li>
+    </ul>
+    <p>Wanneer je enkel over de X-as of enkel over de Y-as wil schalen ten opzichte van de oorspronkelijke
+        afmetingen, kun je gebruik maken van <span>scaleX</span> of <span>scaleY</span>. Je schrijft dan logischerwijze
+        maar 1 parameter.</p>
+    <h2>rotate</h2>
+    <p>Rotate dient om een rotatie door te voeren ten opzichte van de oorspronkelijke positie. Bij rotate schrijf je
+        1 parameter, namelijk het aantal graden voor de draaiing.
+    </p>
+    <p>Een voorbeeld:</p>
+    <pre>transform:rotate(45deg);</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>Rotatie van 45° in wijzerzin (CW)</li>
+        <li>Negatief getal = in tegenwijzerzin (CCW)</li>
+    </ul>
+    <h2>skew</h2>
+    <p>Skew gebruik je om een element schuin te trekken. Bij skew schrijf je 2 parameters die aangeven onder welke hoek
+        horizontaal en/of verticaal de schuintrekking moet gebeuren.</p>
+    <p>Een voorbeeld:</p>
+    <pre>transform:skew(45deg,20deg);</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>45° schuin over de x-as</li>
+        <li>20° schuin over de y-as</li>
+    </ul>
+    <p>Wanneer je enkel over de X-as of enkel over de Y-as wil schuintrekken ten opzichte van de oorspronkelijke
+        afmetingen, kun je gebruik maken van <span>skewX</span> of <span>skewY</span>. Je schrijft dan logischerwijze
+        maar 1 parameter.</p>
+    <h2>transform-origin</h2>
+    <p>Tot nu toe werkten we met een vast referentiepunt of rotatiepunt waarrond de transformatie gebeurde, namelijk het
+        middelpunt van het element.
+        Je kunt dat referentiepunt ook verleggen via de eigenschap transform-origin.
+    </p>
+    <p>Een voorbeeld:</p>
+    <pre>transform:rotate(20deg);
+transform-origin: 0% 20%;
+</pre>
+    <p>Concreet betekent dit:</p>
+    <ul>
+        <li>we willen een rotatie van 20°</li>
+        <li>de rotatie begint niet uit het middelpunt 50% 50% maar 20% onder de linkerbovenhoek</li>
+    </ul>
+    <h2>Meerdere transforms tegelijkertijd</h2>
+    <p>Wil je meerdere transforms voor eenzelfde selector, dan moet je die allemaal in 1 lijn schrijven. Zou je die
+        onder elkaar schrijven, zou de eerste lijn overschreven worden door de volgende enz.</p>
+    <p>Een voorbeeld:</p>
+    <pre>transform: rotate(290deg) scale(1.3) skew(45deg);
+</pre>
+    <h2>Demo: hover over de blokjes</h2>
+    <div>
+        <div id="nr1">translate</div>
+        <div id="nr2">scale</div>
+        <div id="nr3">rotate</div>
+        <div id="nr4">skew</div>
+        <div id="nr5">origin</div>
+        <div id="nr6">meerdere</div>
+    </div>
+
+    <h2>Surftip</h2>
+    <p>Surf naar <a href="https://keyframes.app/">keyframes.app</a>. In de editor kan je experimenteren met de
+        verschillende waarden voor rotate, scale enz. Vervang de placeholder-tekst door jouw eigen invoer en bewonder
+        het resultaat. Via de knop 'Show output CSS' kun je nakijken welke transformatie je gebruikte
+        om het blokje te manipuleren.</p>
+    <p>Wie in Chrome de extensie 'Keyframes' installeert, kan op een site die online staat (bijvoorbeeld jouw eigen
+        sinners-site), een element selecteren en dat vervolgens een transformatie laten ondergaan.</p>
+</article>
+
+<p><a href="hoofdstuk11.html"><i class="material-icons">keyboard_arrow_left</i></a> <a href="index.html"><i
+        class="material-icons">home</i></a> <a href="hoofdstuk13.html"><i
+        class="material-icons">keyboard_arrow_right</i></a></p>
+
+</body>
+</html>

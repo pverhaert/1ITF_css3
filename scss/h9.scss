@@ -1,0 +1,41 @@
+@import "variables";
+@import "reboot";
+
+img {
+  border: $afstand/2 solid $donker;
+
+  &:nth-child(2) {
+    background-color: invert($oranje);
+    color: $licht;
+    border-radius: 50%
+  }
+}
+
+article div {
+  width: 450px;
+  margin: 2*$afstand auto;
+  padding-top: 125px;
+  border-style: solid;
+  border-width: 25px;
+
+  &#nr1 {
+    border-image: url(../images/kaarten1.jpg) 25 fill round;
+  }
+
+  &#nr2 {
+    border-image: url(../images/kaarten2.jpg) 25 fill repeat;
+  }
+
+  &#nr3 {
+    width: 40px;
+    height: 40px;
+    padding-top: 0;
+    border-left: 50px solid $donker;
+    border-right: 50px solid $donker;
+    border-top: 50px solid $oranje;
+    border-bottom: 50px solid $oranje;
+  }
+}
+
+
+

@@ -1,0 +1,23 @@
+.lijst {
+  list-style: none;
+  padding-left: 0px;
+
+  li {
+    display: flex;
+    align-content: space-between;
+
+    p {
+      flex: 1 1 70%;
+
+      &:first-child {
+        font-weight: bold;
+        background-color: inherit;
+        color: $oranje;
+        flex: 1 1 30%;
+
+      }
+
+    }
+  }
+
+}

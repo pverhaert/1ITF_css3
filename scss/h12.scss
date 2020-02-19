@@ -1,0 +1,44 @@
+@import "variables";
+@import "reboot";
+@import "pre";
+
+
+article > div {
+  display: flex;
+
+  > div {
+    height: 100px;
+    width: 100px;
+    background-color: darken(invert($oranje), 15%);
+    color: $licht;
+    margin: $afstand;
+    font-weight: bold;
+    text-align: center;
+    flex: 1 1 100%;
+
+    &#nr1:hover {
+      transform: translate(20px, -20px);
+    }
+
+    &#nr2:hover {
+      transform: scale(1.1, 0.6);
+    }
+
+    &#nr3:hover {
+      transform: rotate(45deg);
+    }
+
+    &#nr4:hover {
+      transform: skew(45deg, 20deg);
+    }
+
+    &#nr5:hover {
+      transform: rotate(20deg);
+      transform-origin: 0% 20%;
+    }
+
+    &#nr6:hover {
+      transform: rotate(290deg) scale(1.3) skew(45deg);
+    }
+  }
+}
